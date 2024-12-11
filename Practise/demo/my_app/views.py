@@ -10,4 +10,8 @@ def Index(request):
     return HttpResponse(msg)
 
 def User(request):
-    return render(request,"user.html",{"Name":"dwara"})
+    mobile = request.GET["mobile"]
+    Keyboard = request.GET["Keyboard"]
+    monitor = request.GET["monitor"]
+    price = int(mobile) + int(Keyboard) + int(monitor)
+    return render(request,"user.html",{"price":price})

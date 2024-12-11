@@ -6,7 +6,14 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>This is Home page by the html page</h1>
-    <h2>This is Home page by the html page</h2>
+    {% block content %}
+    <form action="/User/">
+        <h1> Product</h1>
+            mobile <input type="text" name="mobile"/> <br><br>
+            Keyboard <input type="text" name="Keyboard"/> <br><br>
+            monitor <input type="text" name="monitor"/> <br><br>
+            submit <input type="submit" name="submit"/>
+    </form>
+    {% endblock %}
 </body>
 </html>
