@@ -15,3 +15,9 @@ def User(request):
     monitor = request.GET["monitor"]
     price = int(mobile) + int(Keyboard) + int(monitor)
     return render(request,"user.html",{"price":price})
+
+def Image(request):
+    return render(request,"Img.html")
+
+def Bootstrap(request):
+    return render(request,"Bootstrap.html")
