@@ -3,17 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Application Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    {% block content %}
-    <form action="/User/">
-        <h1> Product</h1>
-            mobile <input type="text" name="mobile"/> <br><br>
-            Keyboard <input type="text" name="Keyboard"/> <br><br>
-            monitor <input type="text" name="monitor"/> <br><br>
-            submit <input type="submit" name="submit"/>
-    </form>
-    {% endblock %}
+    <div class="container mt-5">
+        <div class="col-md-offset-3 col-md-5 mx-auto">
+            <form action="User/" method="POST">
+                {% csrf_token %}
+                <h2 class="text-center mb-4">Application Form</h2>
+
+                <div class="form-group mb-3">
+                    <label for="Name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Age">Age</label>
+                    <input type="number" class="form-control" id="age" name="age" placeholder="Enter your age" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Address">Address</label>
+                    <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Contact">Contact</label>
+                    <input type="tel" class="form-control" id="contact" name="contact" placeholder="Enter your contact number" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group text-end">
+                    <button type="submit" value="Register" class="btn btn-primary">Submit</button>
+                    <button type="reset" value="Clear" class="btn btn-danger">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

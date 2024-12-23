@@ -1,8 +1,22 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from .models import Datas
 # Create your views here.           # new line
 def Home(request):
+    if request.method == "POST":
+        Name = request.POST["name"]
+        Age = request.POST["age"]
+        Address = request.POST["address"]
+        Contact = request.POST["contact"]
+        Email = request.POST["email"]
+
+        obj = Datas()
+        obj.Name = Name
+        obj.Age = Age
+        obj.Address = Address
+        obj.Contact = Contact
+        obj.Email = Email
+        obj.save()
     return render(request,"Home.html")
 
 def Index(request):
@@ -10,11 +24,7 @@ def Index(request):
     return HttpResponse(msg)
 
 def User(request):
-    mobile = request.GET["mobile"]
-    Keyboard = request.GET["Keyboard"]
-    monitor = request.GET["monitor"]
-    price = int(mobile) + int(Keyboard) + int(monitor)
-    return render(request,"user.html",{"price":price})
+    return render(request,"user.html")
 
 def Image(request):
     return render(request,"Img.html")

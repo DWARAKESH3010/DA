@@ -23,5 +23,5 @@ urlpatterns = [
     path("Index/",Index), #new Line
     path("User/",User),
     path("Img/",Image),
-    path("Boot",Bootstrap)
+    path("Boot/",Bootstrap)
 ]
